@@ -75,9 +75,9 @@ a { text-decoration: none; }
 @media (max-width: 760px) { .stage { min-height: 860px; }.perimeter { inset: 7px; }.topbar { inset: 17px 7%; gap: 18px; }.brand { min-width: auto; font-size: 17px; }.brand img { width: 23px; height: 23px; }.menu { gap: 13px; padding-top: 4px; }.menu a { font-size: 8px; }.play-btn { top: 40px; right: 0; }.hero-art { top: 19%; width: 112vw; height: 43%; }.glyph-block { left: 22%; width: 56%; top: 28%; font-size: 10px; }.country-btn--left { left: 6%; top: 42%; }.country-btn--right { right: 6%; top: 42%; }.hero-copy { left: 9%; bottom: 18%; width: 67%; }.hero-copy h1 { font-size: clamp(43px, 13vw, 72px); }.headline-rule { right: -24px; width: 20px; }.bottom-copy { right: 9%; bottom: 7%; width: 67%; text-align: left; }.bottom-copy p { font-size: 10px; }.stage-footer { display: none; }.marker--one { left: 17%; }.marker--two { left: 32%; }.marker--three { left: 47%; }.marker--four { left: 62%; }.marker--five { right: 8%; }.editorial-section { min-height: auto; padding: 18vh 9vw 15vh; }.section-kicker { top: 8vh; left: 9vw; }.destinations-section { display: block; }.destinations-section > div:nth-child(2) { padding: 0 0 12vh 15vw; }.destination-list { padding: 0 0 0 15vw; }.destination-card__aside { display: none; }.destination-card { grid-template-columns: 35px 48px 1fr 20px; gap: 8px; }.destination-card__visual { width: 48px; height: 38px; }.destination-card__name { font-size: 26px; }.contribution-section { display: flex; flex-direction: column; align-items: stretch; gap: 11vh; }.contribution-note { padding-left: 15vw; }.contribution-stamp { align-self: center; order: 2; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 
-/* Vietnamese shaping override: keep diacritics with their letters and allow
-   breaks only between words, not inside Vietnamese words. */
-:root { --serif: "Noto Serif", "Cormorant Garamond", Georgia, serif; }
+/* Vietnamese shaping override: restore the original editorial serif while
+   keeping a Vietnamese-capable fallback and safe word boundaries. */
+:root { --serif: "Cormorant Garamond", "Noto Serif", Georgia, serif; }
 body { text-rendering: optimizeLegibility; }
 .hero-copy h1,
 .destinations-section h2,
@@ -89,6 +89,9 @@ body { text-rendering: optimizeLegibility; }
   word-break: keep-all;
   overflow-wrap: normal;
   hyphens: none;
-  letter-spacing: -.035em;
 }
-.hero-copy h1 { text-wrap: pretty; }
+.hero-copy h1 { letter-spacing: -.058em; text-wrap: balance; }
+.destinations-section h2,
+.contribution-section h2,
+.about-modal h2 { letter-spacing: -.06em; }
+.destination-card__name { letter-spacing: normal; }

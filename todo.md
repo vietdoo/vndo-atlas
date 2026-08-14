@@ -32,3 +32,10 @@
 - [x] Đảm bảo hero, title, mô tả, ảnh, aside, caption, index và nút điều hướng dùng cùng một active country.
 - [x] Kiểm thử chuyển Việt Nam → Trung Quốc → Nhật Bản → Việt Nam và các nút trước/sau.
 - [x] Chạy check/build và lưu checkpoint bản sửa lỗi.
+
+## Restore preferred typography
+
+- [x] Đối chiếu font Cormorant Garamond ban đầu với cấu hình font hiện tại.
+- [x] Khôi phục font chính và giữ fallback hỗ trợ tiếng Việt.
+- [x] Kiểm tra hero, destination cards và responsive mobile.
+- [x] Chạy build và lưu checkpoint mới.
