@@ -19,32 +19,32 @@ type Destination = {
 
 const destinations: Destination[] = [
   {
-    name: "China",
-    country: "China",
-    phonetic: "缘分  (Yuánfèn)",
-    title: "China — golden courtyards, silk-road myths, roofs that refuse gravity",
-    description: "Wander forbidden gardens, painted eaves, and stories older than the maps that tried to hold them.",
-    aside: "A destined meeting",
+    name: "Trung Quốc",
+    country: "Trung Quốc",
+    phonetic: "缘分  (Duyên phận)",
+    title: "Trung Quốc — sân vàng, huyền thoại con đường tơ lụa, mái ngói thách thức trọng lực",
+    description: "Lang thang qua những khu vườn cấm, hiên mái sơn màu và những câu chuyện lâu đời hơn cả tấm bản đồ từng cố giữ chúng.",
+    aside: "Một cuộc gặp đã định",
     image: "/manus-storage/chimes-hero-china_a199739c.png",
     marker: "中",
   },
   {
-    name: "Vietnam",
-    country: "Vietnam",
+    name: "Việt Nam",
+    country: "Việt Nam",
     phonetic: "Duyên  (duyên)",
-    title: "Vietnam — lantern-lit alleys, river mornings, and roofs softened by rain",
-    description: "Follow incense smoke through old quarters where every threshold keeps a little weather inside.",
-    aside: "A thread that finds you",
+    title: "Việt Nam — ngõ đèn lồng, sớm mai bên sông và những mái nhà mềm đi trong mưa",
+    description: "Lần theo làn khói hương qua khu phố cũ, nơi mỗi bậc cửa đều giữ lại một chút thời tiết bên trong.",
+    aside: "Một sợi duyên tìm đến",
     image: "/manus-storage/chimes-destination-vietnam_c521950d.png",
     marker: "越",
   },
   {
-    name: "Japan",
-    country: "Japan",
-    phonetic: "縁  (En)",
-    title: "Japan — quiet thresholds, cedar shadows, and bells that remember the wind",
-    description: "Take the long way beneath shrine eaves, where silence gathers detail and seasons leave a trace.",
-    aside: "A connection in passing",
+    name: "Nhật Bản",
+    country: "Nhật Bản",
+    phonetic: "縁  (En — duyên kết nối)",
+    title: "Nhật Bản — ngưỡng cửa tĩnh lặng, bóng tuyết tùng và tiếng chuông nhớ gió",
+    description: "Đi vòng thật xa dưới những hiên đền, nơi im lặng gom nhặt từng chi tiết và mùa để lại dấu vết.",
+    aside: "Một mối gặp ngang qua",
     image: "/manus-storage/chimes-destination-japan_1a69dec1.png",
     marker: "日",
   },
@@ -86,18 +86,18 @@ export default function Home() {
       <section className="stage" id="home" data-country={active.name.toLowerCase()}>
         <div className="perimeter" aria-hidden="true" />
         <header className="topbar">
-          <a className="brand" href="#home" aria-label="Chimes home">
+          <a className="brand" href="#home" aria-label="Chimes — trang chủ">
             <img src="/manus-storage/chimes-mark_c8e788e5.png" alt="" />
             <span>Chimes</span>
           </a>
-          <nav className="menu" aria-label="Primary navigation">
-            <a href="#home" className="is-active">Home</a>
-            <a href="#destinations">Destinations</a>
-            <a href="#contributions">Contributions</a>
+          <nav className="menu" aria-label="Điều hướng chính">
+            <a href="#home" className="is-active">Trang chủ</a>
+            <a href="#destinations">Điểm đến</a>
+            <a href="#contributions">Góp nhặt</a>
           </nav>
           <button className={`play-btn ${isPlaying ? "is-playing" : ""}`} type="button" onClick={() => setIsPlaying((value) => !value)} aria-pressed={isPlaying}>
             <span className="play-btn__mark"><Play size={11} fill="currentColor" /></span>
-            {isPlaying ? "Pause" : "Play"}
+            {isPlaying ? "Dừng" : "Nghe"}
           </button>
         </header>
 
@@ -107,12 +107,12 @@ export default function Home() {
         <div className="marker marker--top marker--four">4</div>
         <div className="marker marker--top marker--five">5</div>
 
-        <button className="country-btn country-btn--left" type="button" onClick={() => setDestination((activeIndex + 1) % destinations.length)} aria-label={`Next destination: ${adjacent.next.name}`}>
+        <button className="country-btn country-btn--left" type="button" onClick={() => setDestination((activeIndex + 1) % destinations.length)} aria-label={`Điểm đến tiếp theo: ${adjacent.next.name}`}>
           <span className="country-btn__marker">{adjacent.next.marker}</span>
           <span className="country-btn__label">{adjacent.next.name}</span>
           <ChevronLeft size={13} />
         </button>
-        <button className="country-btn country-btn--right" type="button" onClick={() => setDestination((activeIndex + destinations.length - 1) % destinations.length)} aria-label={`Previous destination: ${adjacent.previous.name}`}>
+        <button className="country-btn country-btn--right" type="button" onClick={() => setDestination((activeIndex + destinations.length - 1) % destinations.length)} aria-label={`Điểm đến trước: ${adjacent.previous.name}`}>
           <span className="country-btn__marker">{adjacent.previous.marker}</span>
           <span className="country-btn__label">{adjacent.previous.name}</span>
           <ChevronRight size={13} />
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="hero-art" aria-live="polite">
           <div className="glyph-block" aria-hidden="true">{Array.from({ length: 7 }, (_, row) => <span key={row}>{glyphs.slice(row * 9, row * 9 + 26)}</span>)}</div>
           <div className="roof-shadow" aria-hidden="true" />
-          <img className="roof-image" src={active.image} alt={`${active.name} architectural roof`} />
+          <img className="roof-image" src={active.image} alt={`Mái kiến trúc ${active.name}`} />
           <div className="hero-art__caption">{active.country} / 01</div>
         </div>
 
@@ -134,18 +134,18 @@ export default function Home() {
         <div className="bottom-copy">
           <p>{active.description}</p>
           <button type="button" className="about-link" onClick={() => setIsAboutOpen(true)}>
-            About <span aria-hidden="true">↗</span>
+            Về Chimes <span aria-hidden="true">↗</span>
           </button>
         </div>
 
-        <div className="stage-footer"><span>Scroll to wander</span><span className="footer-line" /><span>{String(activeIndex + 1).padStart(2, "0")} / 03</span></div>
+        <div className="stage-footer"><span>Cuộn để du ngoạn</span><span className="footer-line" /><span>{String(activeIndex + 1).padStart(2, "0")} / 03</span></div>
       </section>
 
       <section className="editorial-section destinations-section" id="destinations">
-        <div className="section-kicker">02 / destinations</div>
+        <div className="section-kicker">02 / điểm đến</div>
         <div>
-          <p className="section-eyebrow">Choose a neighboring story.</p>
-          <h2>Three places,<br /><em>one slow atlas.</em></h2>
+          <p className="section-eyebrow">Chọn một câu chuyện kế bên.</p>
+          <h2>Ba miền đất,<br /><em>một atlas thong thả.</em></h2>
         </div>
         <div className="destination-list">
           {destinations.map((destination, index) => (
@@ -160,12 +160,12 @@ export default function Home() {
       </section>
 
       <section className="editorial-section contribution-section" id="contributions">
-        <div className="section-kicker">03 / contributions</div>
+        <div className="section-kicker">03 / góp nhặt</div>
         <div className="contribution-note">
-          <p className="section-eyebrow">Field notes are welcome.</p>
-          <h2>Leave a small<br /><em>sound behind.</em></h2>
-          <p className="contribution-body">A route, a roofline, a dish you still remember. The atlas grows through details that refuse to be rushed.</p>
-          <button type="button" className="ink-button" onClick={() => setIsAboutOpen(true)}>Read the note <span>↗</span></button>
+          <p className="section-eyebrow">Những ghi chú bên đường luôn được chào đón.</p>
+          <h2>Để lại một<br /><em>âm vang nhỏ.</em></h2>
+          <p className="contribution-body">Một lối đi, một đường mái, một món ăn bạn vẫn còn nhớ. Atlas lớn lên từ những chi tiết không chịu bị vội vàng.</p>
+          <button type="button" className="ink-button" onClick={() => setIsAboutOpen(true)}>Đọc lời nhắn <span>↗</span></button>
         </div>
         <div className="contribution-stamp" aria-hidden="true">CHIMES<br /><span>FIELD EDITION</span><br />MMXXVI</div>
       </section>
@@ -173,11 +173,11 @@ export default function Home() {
       {isAboutOpen && (
         <div className="modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setIsAboutOpen(false); }}>
           <section className="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-title">
-            <button className="modal-close" type="button" onClick={() => setIsAboutOpen(false)} aria-label="Close about dialog"><X size={17} /></button>
-            <p className="section-eyebrow">A note from the margin</p>
-            <h2 id="about-title">Travel slowly.<br /><em>Notice everything.</em></h2>
-            <p>Chimes is a small editorial atlas for places that stay with you after the itinerary ends. Each chapter is a collage of architecture, language, weather, and the quiet connections made along the way.</p>
-            <div className="modal-signature">Budarina / Chimes<br /><span>an independent travel study</span></div>
+            <button className="modal-close" type="button" onClick={() => setIsAboutOpen(false)} aria-label="Đóng cửa sổ giới thiệu"><X size={17} /></button>
+            <p className="section-eyebrow">Một ghi chú bên lề</p>
+            <h2 id="about-title">Đi thật chậm.<br /><em>Nhìn thật kỹ.</em></h2>
+            <p>Chimes là một atlas biên tập nhỏ dành cho những nơi vẫn ở lại sau khi hành trình kết thúc. Mỗi chương là một lớp ghép của kiến trúc, ngôn ngữ, thời tiết và những mối duyên lặng lẽ trên đường.</p>
+            <div className="modal-signature">Budarina / Chimes<br /><span>một khảo cứu du hành độc lập</span></div>
           </section>
         </div>
       )}
