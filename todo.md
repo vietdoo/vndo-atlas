@@ -72,3 +72,10 @@ Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Mala
 - [x] Chọn và áp dụng tên site mới có chữ VNDO, bao gồm brand, title, description và microcopy.
 - [x] Tạo/cập nhật icon nhận diện VNDO và favicon theo phong cách dấu triện/atlas giấy cổ.
 - [x] Kiểm tra state 13 điểm đến, responsive, build và lưu checkpoint mới.
+
+## GitHub repository export
+
+- [ ] Kiểm tra trạng thái Git hiện tại và các file cần loại khỏi commit.
+- [ ] Tạo repository GitHub private mới tên `vndo-atlas`.
+- [ ] Commit toàn bộ source hiện tại và push branch chính lên remote mới.
+- [ ] Xác minh remote URL, branch và commit đầu tiên trên GitHub.
