@@ -10,7 +10,7 @@ VNDO Atlas là frontend React tĩnh, tập trung vào trải nghiệm đọc và
 
 Các điểm đến hiện có gồm Việt Nam, Trung Quốc, Nhật Bản, Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Malaysia, Singapore, Ấn Độ, Sri Lanka và Nepal.
 
-> **Trạng thái:** dự án đã sẵn sàng để phát triển tiếp trên local hoặc deploy qua nền tảng hỗ trợ Vite. Bản hiện tại dùng một số asset được lưu qua Manus Storage; hãy đọc phần [Lưu ý khi deploy lên Vercel](#lưu-ý-khi-deploy-lên-vercel) trước khi đưa lên production.
+> **Trạng thái:** dự án đã sẵn sàng để phát triển tiếp trên local hoặc deploy qua nền tảng hỗ trợ Vite. Toàn bộ ảnh collage và favicon hiện đã nằm trong repository tại `client/public/assets`, vì vậy Vercel không cần route Manus Storage để phục vụ asset.
 
 ## Công nghệ
 
@@ -93,7 +93,8 @@ Sau đó mở [http://localhost:3000](http://localhost:3000). Server production 
 vndo-atlas/
 ├── client/
 │   ├── index.html              # metadata, font và favicon
-│   ├── public/                 # chỉ dành cho file cấu hình nhỏ
+│   ├── public/
+│   │   └── assets/             # ảnh WebP và mark SVG được commit cùng repository
 │   └── src/
 │       ├── data/destinations.ts # data contract 13 điểm đến
 │       ├── pages/Home.tsx      # trang editorial chính
@@ -128,7 +129,7 @@ type Destination = {
 
 Không nên tạo một state riêng cho title, ảnh hoặc caption. `Home.tsx` chỉ nên đọc các trường từ `active` và `adjacent` để mọi phần của hero chuyển cùng một quốc gia.
 
-Khi bổ sung ảnh mới, ưu tiên asset collage đã được xử lý cùng palette parchment, ink brown, jade và cinnabar. Những file ảnh lớn không nên đặt trong `client/public` hoặc `client/src/assets`; hãy dùng một storage/CDN ổn định và ghi URL vào data contract.
+Khi bổ sung ảnh mới, ưu tiên asset collage đã được xử lý cùng palette parchment, ink brown, jade và cinnabar. Bản hiện tại chủ động giữ bộ ảnh đã tối ưu trong `client/public/assets` để repository có thể clone và deploy độc lập trên Vercel. Nếu bộ asset tăng đáng kể, hãy chuyển sang storage/CDN ổn định và cập nhật URL trong data contract.
 
 ## Biến môi trường
 
@@ -187,15 +188,9 @@ Nếu CLI hỏi cấu hình, chọn project hiện tại hoặc tạo project m�
 
 ## Lưu ý khi deploy lên Vercel
 
-Vercel có thể build phần React/Vite, nhưng **không tự cung cấp route Manus Storage**. Một số ảnh collage và favicon hiện đang được tham chiếu bằng đường dẫn `/manus-storage/...`, vốn hoạt động trong hệ sinh thái Manus. Khi deploy sang Vercel, cần chuyển các asset này sang một URL HTTPS công khai và cập nhật:
+Vercel không cần route Manus Storage cho bản hiện tại: toàn bộ 13 ảnh điểm đến và favicon đã được tối ưu thành WebP/SVG và commit tại `client/public/assets`. Vite sẽ copy thư mục này nguyên trạng vào `dist/public/assets`, còn giao diện tham chiếu bằng đường dẫn `/assets/...`.
 
-```text
-client/src/data/destinations.ts
-client/src/pages/Home.tsx
-client/index.html
-```
-
-Có thể dùng Vercel Blob, Cloudinary, S3-compatible storage hoặc một CDN ảnh khác. Không đặt ảnh lớn trực tiếp trong Git repository nếu không cần thiết; nên dùng CDN để giảm kích thước clone và cải thiện cache. Các ảnh Unsplash đang dùng URL HTTPS trực tiếp sẽ tiếp tục hoạt động, nhưng cần kiểm tra license, hotlink policy và tính ổn định trước khi dùng production.
+Tổng kích thước bộ asset local khoảng 4,6 MB. Đây là lựa chọn phù hợp để repository có thể clone và deploy độc lập; nếu bộ ảnh tăng đáng kể trong tương lai, hãy cân nhắc Vercel Blob, Cloudinary, S3-compatible storage hoặc CDN ảnh để giảm kích thước clone và cải thiện cache. Các nguồn ảnh tham chiếu ban đầu được tải về và lưu thành bản local để deployment không phụ thuộc hotlink hoặc route bên ngoài.
 
 Nếu không cần analytics trên Vercel, hãy xóa hoặc vô hiệu hóa script Umami trong `client/index.html` thay vì để các placeholder environment variable chưa được thay thế.
 
@@ -226,4 +221,3 @@ Nội dung hiển thị được viết bằng tiếng Việt; không đưa lạ
 2. [Vercel — Vite deployment guide](https://vercel.com/docs/frameworks/frontend/vite)
 3. [pnpm — Installation](https://pnpm.io/installation)
 4. [Node.js — Download](https://nodejs.org/en/download)
-

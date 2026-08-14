@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Biểu tượng VNDO Atlas</title>
+  <desc id="desc">Dấu hiệu hình học mô phỏng mảnh bản đồ gấp và mái hiên.</desc>
+  <path d="M16 21 58 11l54 17-42 13-54-20Z" fill="#2f2b23"/>
+  <path d="M16 21v66l54 24V41L16 21Z" fill="#3f392d"/>
+  <path d="m70 41 42-13v62l-42 21V41Z" fill="#6d7153"/>
+  <path d="m16 87 54 24 42-21" fill="none" stroke="#b33b2e" stroke-width="5" stroke-linecap="square"/>
+  <path d="m35 49 34-9 28 9-28 9-34-9Z" fill="#e9e0c8" stroke="#2f2b23" stroke-width="3"/>
+  <path d="M42 49v21h20V54l7-5 7 5v16h20V49" fill="none" stroke="#2f2b23" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M52 70V58h10v12" fill="#b33b2e"/>
+  <path d="m91 23 10 4-9 3" fill="#b33b2e"/>
+</svg>

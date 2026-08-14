@@ -22,7 +22,7 @@ export const destinations: Destination[] = [
     title: "Việt Nam — ngõ đèn lồng, sớm mai bên sông và những mái nhà mềm đi trong mưa",
     description: "Lần theo làn khói hương qua khu phố cũ, nơi mỗi bậc cửa đều giữ lại một chút thời tiết bên trong.",
     aside: "Một sợi duyên tìm đến",
-    image: "/manus-storage/chimes-vietnam-editorial_a623ea27.png",
+    image: "/assets/vndo-vietnam-editorial.webp",
     marker: "VN",
   },
   {
@@ -32,7 +32,7 @@ export const destinations: Destination[] = [
     title: "Trung Quốc — sân vàng, huyền thoại con đường tơ lụa, mái ngói thách thức trọng lực",
     description: "Lang thang qua những khu vườn cấm, hiên mái sơn màu và những câu chuyện lâu đời hơn cả tấm bản đồ từng cố giữ chúng.",
     aside: "Một cuộc gặp đã định",
-    image: "/manus-storage/chimes-hero-china_a199739c.png",
+    image: "/assets/vndo-china-editorial.webp",
     marker: "CN",
   },
   {
@@ -42,7 +42,7 @@ export const destinations: Destination[] = [
     title: "Nhật Bản — ngưỡng cửa tĩnh lặng, bóng tuyết tùng và tiếng chuông nhớ gió",
     description: "Đi vòng thật xa dưới những hiên đền, nơi im lặng gom nhặt từng chi tiết và mùa để lại dấu vết.",
     aside: "Một mối gặp ngang qua",
-    image: "/manus-storage/chimes-japan-editorial-v2_73e835ad.png",
+    image: "/assets/vndo-japan-editorial.webp",
     marker: "JP",
   },
   {
@@ -52,7 +52,7 @@ export const destinations: Destination[] = [
     title: "Thái Lan — mái ngói xếp lớp, bờ sông vàng nắng và những khoảng sân mở",
     description: "Một buổi chiều trôi chậm giữa hàng hiên, lớp sơn son và tiếng chuông rơi xuống mặt nước.",
     aside: "Một lời chào dưới mái cong",
-    image: "/manus-storage/atlas-thailand_67c6d99f.png",
+    image: "/assets/vndo-thailand-editorial.webp",
     marker: "TH",
   },
   {
@@ -62,7 +62,7 @@ export const destinations: Destination[] = [
     title: "Hàn Quốc — sân hanok, đường ngói thấp và nắng mỏng trên khung gỗ",
     description: "Lắng nghe một khu phố cổ tự sắp xếp lại nhịp thở quanh sân trong, cửa giấy và bóng núi.",
     aside: "Một tình thân ở lại",
-    image: "/manus-storage/atlas-south-korea_e9e500e0.png",
+    image: "/assets/vndo-south-korea-editorial.webp",
     marker: "KR",
   },
   {
@@ -72,7 +72,7 @@ export const destinations: Destination[] = [
     title: "Campuchia — đá sa thạch, rễ cây ôm tường và bình minh chạm vào Angkor",
     description: "Đi giữa những hành lang đổ bóng, nơi rừng và đền thờ cùng kể một câu chuyện bằng im lặng.",
     aside: "Một bình an phủ rêu",
-    image: "/manus-storage/atlas-cambodia_4ec5d21d.png",
+    image: "/assets/vndo-cambodia-editorial.webp",
     marker: "KH",
   },
   {
@@ -82,7 +82,7 @@ export const destinations: Destination[] = [
     title: "Lào — mái chùa thấp, dòng Mekong chậm và những bức tường màu mật ong",
     description: "Một thành phố nhỏ mở ra bằng tiếng guốc, mùi gỗ cũ và ánh chiều vướng trên mái ngói.",
     aside: "Một nhịp an lành",
-    image: "/manus-storage/atlas-laos_3fa0fff2.png",
+    image: "/assets/vndo-laos-editorial.webp",
     marker: "LA",
   },
   {
@@ -92,7 +92,7 @@ export const destinations: Destination[] = [
     title: "Indonesia — đá núi lửa, tháp tầng và sương sớm dâng từ ruộng bậc thang",
     description: "Đứng trước một ngọn tháp cổ, nơi đá đen giữ lại dấu tay của nước, lửa và những chuyến hành hương.",
     aside: "Một vị nhớ từ đất",
-    image: "/manus-storage/atlas-indonesia_d5ce67a1.png",
+    image: "/assets/vndo-indonesia-editorial.webp",
     marker: "ID",
   },
   {
@@ -102,7 +102,7 @@ export const destinations: Destination[] = [
     title: "Malaysia — shophouse nhiều màu, hành lang có mái và gió mặn từ eo biển",
     description: "Một thành phố cảng ghép bằng nhiều tiếng nói, nơi cửa chớp, gạch hoa và bữa cơm gặp nhau.",
     aside: "Một thương mến đa thanh",
-    image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=85",
+    image: "/assets/vndo-malaysia-editorial.webp",
     marker: "MY",
   },
   {
@@ -112,7 +112,7 @@ export const destinations: Destination[] = [
     title: "Singapore — mái ngói shophouse, bóng hiên năm chân và những lớp phố nhiệt đới",
     description: "Theo một dãy hành lang có mái, nơi ký ức thành thị nép dưới cửa chớp và ánh mưa xanh.",
     aside: "Một ngôi làng trong phố",
-    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85",
+    image: "/assets/vndo-singapore-editorial.webp",
     marker: "SG",
   },
   {
@@ -122,7 +122,7 @@ export const destinations: Destination[] = [
     title: "Ấn Độ — đá sa thạch ấm, vòm cửa chạm khắc và bụi vàng cuối ngày",
     description: "Một chuyến đi xuyên qua pháo đài, hang đá và những bậc thềm đã học cách giữ bóng râm.",
     aside: "Một cách xoay xở đẹp đẽ",
-    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=85",
+    image: "/assets/vndo-india-editorial.webp",
     marker: "IN",
   },
   {
@@ -132,7 +132,7 @@ export const destinations: Destination[] = [
     title: "Sri Lanka — đá granite giữa rừng, mái chùa ấm sáng và con đường lên Lion Rock",
     description: "Từ một thành phố thiêng đến vách đá giữa rừng, mỗi bậc thang mở thêm một lớp của đảo quốc.",
     aside: "Một lời chúc dưới tán rừng",
-    image: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=85",
+    image: "/assets/vndo-sri-lanka-editorial.webp",
     marker: "LK",
   },
   {
@@ -142,7 +142,7 @@ export const destinations: Destination[] = [
     title: "Nepal — gạch nung, mắt Phật trên bảo tháp và mái đất đỏ dưới trời cao",
     description: "Đi qua những quảng trường gỗ và gạch, nơi đôi mắt trên bảo tháp nhìn thành phố chậm rãi đổi mùa.",
     aside: "Một lời chào nhìn thấu",
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=85",
+    image: "/assets/vndo-nepal-editorial.webp",
     marker: "NP",
   },
 ];

@@ -86,3 +86,10 @@ Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Mala
 - [ ] Ghi hướng dẫn cài đặt, chạy local, check, build và preview production.
 - [ ] Ghi hướng dẫn deploy lên Vercel bằng GitHub và Vercel CLI.
 - [ ] Kiểm tra các lệnh trong README và push tài liệu lên GitHub.
+
+## Vercel repository-local assets
+
+- [x] Kiểm kê toàn bộ tham chiếu `/manus-storage/` và asset nguồn hiện có.
+- [x] Copy/tối ưu ảnh collage và favicon vào thư mục public của repository.
+- [x] Cập nhật data, metadata và README để dùng asset local trên Vercel.
+- [x] Kiểm tra build, kích thước asset, serving local và push thay đổi lên GitHub.

@@ -14,7 +14,7 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const active = destinations[activeIndex];
-  const isReferenceAsset = (image: string) => image.includes("images.unsplash.com");
+  const isReferenceAsset = (image: string) => /(?:malaysia|singapore|india|sri-lanka|nepal)-editorial/.test(image);
 
   const adjacent = useMemo(
     () => ({
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="perimeter" aria-hidden="true" />
         <header className="topbar">
           <a className="brand" href="#home" aria-label="VNDO Atlas — trang chủ">
-            <img src="/manus-storage/vndo-atlas-mark_8e817079.svg" alt="" />
+            <img src="/assets/vndo-atlas-mark.svg" alt="" />
             <span>VNDO Atlas</span>
           </a>
           <nav className="menu" aria-label="Điều hướng chính">
