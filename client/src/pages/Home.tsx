@@ -14,6 +14,7 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const active = destinations[activeIndex];
+  const isReferenceAsset = (image: string) => image.includes("images.unsplash.com");
 
   const adjacent = useMemo(
     () => ({
@@ -81,7 +82,7 @@ export default function Home() {
         <div className="hero-art" key={active.name} aria-live="polite">
           <div className="glyph-block" aria-hidden="true">{Array.from({ length: 7 }, (_, row) => <span key={row}>{glyphs.slice(row * 9, row * 9 + 26)}</span>)}</div>
           <div className="roof-shadow" aria-hidden="true" />
-          <img className="roof-image" src={active.image} alt={`Mái kiến trúc ${active.name}`} />
+          <img className={`roof-image ${isReferenceAsset(active.image) ? "roof-image--reference" : ""}`} src={active.image} alt={`Mái kiến trúc ${active.name}`} />
           <div className="hero-art__caption">{active.country} / {String(activeIndex + 1).padStart(2, "0")}</div>
         </div>
 
@@ -111,7 +112,7 @@ export default function Home() {
             {destinations.map((destination, index) => (
             <button key={destination.name} type="button" aria-current={index === activeIndex ? "true" : undefined} className={`destination-card ${index === activeIndex ? "is-selected" : ""}`} onClick={() => { setDestination(index); window.location.hash = "home"; window.scrollTo({ top: 0, behavior: "smooth" }); }}>
               <span className="destination-card__index">0{index + 1}</span>
-              <img className="destination-card__visual" src={destination.image} alt={`Ảnh điểm đến ${destination.name}`} />
+              <img className={`destination-card__visual ${isReferenceAsset(destination.image) ? "destination-card__visual--reference" : ""}`} src={destination.image} alt={`Ảnh điểm đến ${destination.name}`} />
               <span className="destination-card__name">{destination.name}</span>
               <span className="destination-card__aside">{destination.aside}</span>
               <span className="destination-card__arrow">↗</span>

@@ -96,3 +96,6 @@ body { text-rendering: optimizeLegibility; }
 .about-modal h2 { letter-spacing: -.06em; }
 .destination-card__name { letter-spacing: normal; }
 .destination-card__name { min-width: 0; overflow-wrap: normal; word-break: keep-all; white-space: normal; line-height: .92; }
+.roof-image--reference { filter: sepia(.62) saturate(.56) contrast(.9) brightness(1.04) drop-shadow(0 16px 10px rgba(48, 35, 17, .18)); mix-blend-mode: multiply; opacity: .82; clip-path: polygon(2% 4%, 95% 0, 100% 91%, 92% 100%, 5% 96%, 0 12%); }
+.destination-card__visual--reference { filter: sepia(.62) saturate(.54) contrast(.88) brightness(1.04); mix-blend-mode: multiply; opacity: .78; }
+.destination-card:hover .destination-card__visual--reference, .destination-card.is-selected .destination-card__visual--reference { filter: sepia(.48) saturate(.7) contrast(.96); opacity: .94; }

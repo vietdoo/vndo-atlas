@@ -57,3 +57,10 @@ Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Mala
 - [x] Refactor state/navigation để hỗ trợ 13 country state không lệch nội dung.
 - [x] Kiểm thử chuyển vòng, card trực tiếp, desktop/mobile và production build.
 - [x] Lưu checkpoint bản mở rộng 10 quốc gia.
+
+## Editorial asset consistency refresh
+
+- [x] Rà soát 5 ảnh Singapore, Malaysia, Ấn Độ, Sri Lanka và Nepal đang dùng ảnh tham chiếu ngoài style collage.
+- [ ] Tạo 5 collage mới cùng chất liệu giấy cổ, palette đất và xử lý minh họa với bộ asset hiện tại.
+- [ ] Thay URL asset trong `destinations.ts` để hero/card dùng đúng ảnh mới.
+- [ ] Kiểm tra state, responsive, build và lưu checkpoint.
