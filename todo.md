@@ -79,3 +79,10 @@ Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Mala
 - [x] Tạo repository GitHub private mới tên `vndo-atlas`.
 - [x] Commit toàn bộ source hiện tại và push branch chính lên remote mới.
 - [x] Xác minh remote URL, branch và commit đầu tiên trên GitHub.
+
+## README and deployment documentation
+
+- [ ] Soạn README tiếng Việt/English rõ ràng cho repository `vndo-atlas`.
+- [ ] Ghi hướng dẫn cài đặt, chạy local, check, build và preview production.
+- [ ] Ghi hướng dẫn deploy lên Vercel bằng GitHub và Vercel CLI.
+- [ ] Kiểm tra các lệnh trong README và push tài liệu lên GitHub.
