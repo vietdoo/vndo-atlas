@@ -7,7 +7,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import { destinations } from "../data/destinations";
 
-const glyphs = "山水風月雲門庭寺路春秋東西南北光影人間遠行遊記";
+const glyphs = "MÁIHIÊNĐƯỜNGDỐCGÓCPHỐMƯANẮNGĐIQUAỞLẠINHÌNTHẬTKỸ";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -47,9 +47,9 @@ export default function Home() {
       <section className="stage" id="home" data-country={active.name.toLowerCase()}>
         <div className="perimeter" aria-hidden="true" />
         <header className="topbar">
-          <a className="brand" href="#home" aria-label="Chimes — trang chủ">
-            <img src="/manus-storage/chimes-mark_c8e788e5.png" alt="" />
-            <span>Chimes</span>
+          <a className="brand" href="#home" aria-label="VNDO Atlas — trang chủ">
+            <img src="/manus-storage/vndo-atlas-mark_8e817079.svg" alt="" />
+            <span>VNDO Atlas</span>
           </a>
           <nav className="menu" aria-label="Điều hướng chính">
             <a href="#home" className="is-active">Trang chủ</a>
@@ -95,7 +95,7 @@ export default function Home() {
         <div className="bottom-copy">
           <p>{active.description}</p>
           <button type="button" className="about-link" onClick={() => setIsAboutOpen(true)}>
-            Về Chimes <span aria-hidden="true">↗</span>
+            Về VNDO Atlas <span aria-hidden="true">↗</span>
           </button>
         </div>
 
@@ -129,7 +129,7 @@ export default function Home() {
           <p className="contribution-body">Một lối đi, một đường mái, một món ăn bạn vẫn còn nhớ. Atlas lớn lên từ những chi tiết không chịu bị vội vàng.</p>
           <button type="button" className="ink-button" onClick={() => setIsAboutOpen(true)}>Đọc lời nhắn <span>↗</span></button>
         </div>
-        <div className="contribution-stamp" aria-hidden="true">CHIMES<br /><span>FIELD EDITION</span><br />MMXXVI</div>
+        <div className="contribution-stamp" aria-hidden="true">VNDO<br /><span>ATLAS ĐƯỜNG XA</span><br />MMXXVI</div>
       </section>
 
       {isAboutOpen && (
@@ -138,8 +138,8 @@ export default function Home() {
             <button className="modal-close" type="button" onClick={() => setIsAboutOpen(false)} aria-label="Đóng cửa sổ giới thiệu"><X size={17} /></button>
             <p className="section-eyebrow">Một ghi chú bên lề</p>
             <h2 id="about-title">Đi thật chậm.<br /><em>Nhìn thật kỹ.</em></h2>
-            <p>Chimes là một atlas biên tập nhỏ dành cho những nơi vẫn ở lại sau khi hành trình kết thúc. Mỗi chương là một lớp ghép của kiến trúc, ngôn ngữ, thời tiết và những mối duyên lặng lẽ trên đường.</p>
-            <div className="modal-signature">Budarina / Chimes<br /><span>một khảo cứu du hành độc lập</span></div>
+            <p>VNDO Atlas là một atlas biên tập nhỏ dành cho những nơi vẫn ở lại sau khi hành trình kết thúc. Mỗi chương là một lớp ghép của kiến trúc, ngôn ngữ, thời tiết và những mối duyên lặng lẽ trên đường.</p>
+            <div className="modal-signature">VNDO / Atlas<br /><span>một khảo cứu du hành độc lập</span></div>
           </section>
         </div>
       )}

@@ -1,8 +1,8 @@
-# Chimes Clone — Ground-truth design specification
+# VNDO Atlas — Ground-truth design specification
 
 ## Reference
 
-The supplied reference at `https://marinabudarina.github.io/chimes/#home` is the ground truth for this clone. Preserve its editorial travel mood, warm parchment texture, tiny technical navigation, oversized serif headline, centered architectural cutout, and playful destination switchers. Reinterpret imagery and copy as original editable assets rather than copying source files verbatim.
+The supplied editorial travel reference is the ground truth for this clone. Preserve its warm parchment texture, tiny technical navigation, oversized serif headline, centered architectural cutout, and playful destination switchers. Reinterpret imagery and copy as original editable assets rather than copying source files verbatim.
 
 ## Visual analysis
 
@@ -10,7 +10,7 @@ The supplied reference at `https://marinabudarina.github.io/chimes/#home` is the
 - A sparse technical header sits at the top edge: small monospaced labels, generous horizontal breathing room, and a dark irregular “Play” button.
 - The hero uses an asymmetric composition: large architectural image centered high on the page, title block low-left, supporting paragraph low-right, and destination controls on both sides.
 - The visual hierarchy is driven by a contrast between a refined serif display face and tiny monospaced utility text.
-- The reference combines Chinese editorial language, English travel copy, hand-made cutout imagery, shadow-like silhouettes, and a restrained brown/olive/ochre palette.
+- The reference combines travel-journal language, hand-made cutout imagery, shadow-like silhouettes, and a restrained brown/olive/ochre palette; the implementation is fully localized in Vietnamese.
 - Motion should feel like a paper collage being assembled: gentle rise/fade on load, slow architectural drift, and quick tactile button feedback.
 
 ## Chosen direction
@@ -37,7 +37,7 @@ A full-viewport editorial stage with a 12-column invisible scaffold, but no obvi
 ### Signature Elements
 
 - Cinnabar dotted perimeter rule and numbered micro-markers.
-- Architectural cutout with a soft cast shadow over a block of Chinese glyph texture.
+- Architectural cutout with a soft cast shadow over a block of Vietnamese marginal-note texture.
 - Destination switchers that resemble small paper labels with a hand-drawn flag mark.
 
 ### Interaction Philosophy
@@ -50,11 +50,11 @@ Use 180–700ms transitions with cubic-bezier easing. Stage entrance: header lab
 
 ### Typography System
 
-Display: `Cormorant Garamond`, 600–700, tight leading, used for the literary hero title and section titles. Utility: `JetBrains Mono`, 400–500, used for nav, metadata, buttons, labels, and body annotations. Chinese text uses `Noto Serif SC` where available. Never use Inter.
+Display: `Cormorant Garamond`, 600–700, tight leading, used for the literary hero title and section titles. Utility: `JetBrains Mono`, 400–500, used for nav, metadata, buttons, labels, and body annotations. Vietnamese fallback uses `Noto Serif` where needed. Never use Inter.
 
 ### Brand Essence
 
-An editorial travel atlas for curious people who want place, texture, and cultural context instead of generic itineraries. Personality: **observant, tactile, quietly adventurous**.
+VNDO Atlas is an editorial travel atlas for curious people who want place, texture, and cultural context instead of generic itineraries. Personality: **observant, tactile, quietly adventurous**.
 
 ### Brand Voice
 
@@ -62,14 +62,13 @@ Headlines are poetic but specific; CTAs are compact verbs; microcopy reads like 
 
 Example lines:
 
-- “Let the rooflines redraw the horizon.”
-- “Choose a neighboring story.”
+- “Để những đường mái vẽ lại đường chân trời.”
+- “Chọn một câu chuyện kế bên.”
 
 ### Wordmark & Logo
 
-The mark is a small abstract chime: three offset vertical strokes with one suspended dot, suggesting sound, wind, and a hanging eave without spelling the name. The wordmark is set in a custom-tracked serif/mono pairing rather than a default logo font.
+The VNDO mark is a compact folded-map seal with a roof eave and one cinnabar fold, suggesting direction, shelter, and a field note without spelling the name. The wordmark uses a custom-tracked serif/mono pairing rather than a default logo font.
 
 ### Signature Brand Color
 
 **Cinnabar Thread — `#B33B2E`**, used sparingly for the dotted perimeter, active marker, and a few editorial accents.
-

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Chimes visual language: rice-paper cream, ink brown, cinnabar thread,
+/* VNDO Atlas visual language: rice-paper cream, ink brown, cinnabar thread,
    editorial serif headlines, and mono marginalia. */
 :root {
   --paper: #e9e0c8;
@@ -28,7 +28,7 @@ a { text-decoration: none; }
 .stage::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .23; pointer-events: none; background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(67,54,33,.1) 4px, transparent 5px); mix-blend-mode: multiply; }
 .perimeter { position: absolute; inset: 10px; border-top: 2px dotted var(--cinnabar); border-left: 2px dotted var(--cinnabar); border-right: 2px dotted var(--cinnabar); opacity: .85; pointer-events: none; }
 .topbar { position: absolute; inset: 20px 6.5% auto; z-index: 8; display: flex; align-items: flex-start; gap: 34px; }
-.brand { display: inline-flex; align-items: center; gap: 9px; min-width: 116px; font-family: var(--serif); font-size: 19px; font-weight: 700; letter-spacing: -.02em; }
+.brand { display: inline-flex; align-items: center; gap: 9px; min-width: 140px; font-family: var(--serif); font-size: 19px; font-weight: 700; letter-spacing: -.02em; }
 .brand img { width: 27px; height: 27px; object-fit: contain; filter: sepia(.5) saturate(.85); }
 .menu { display: flex; gap: 28px; padding-top: 5px; }
 .menu a { position: relative; font-size: 10px; letter-spacing: -.04em; text-transform: uppercase; color: var(--ink-soft); transition: color .2s ease; }
@@ -51,7 +51,7 @@ a { text-decoration: none; }
 .country-btn__marker { display: grid; place-items: center; width: 21px; height: 21px; color: var(--paper); background: var(--jade); font-family: var(--serif); font-size: 15px; }.country-btn__label { writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: .02em; }
 
 .hero-art { position: absolute; left: 50%; top: 17%; width: min(55vw, 660px); height: 58%; transform: translateX(-50%); }
-.glyph-block { position: absolute; left: 14%; top: 28%; width: 72%; height: 60%; overflow: hidden; display: flex; flex-direction: column; gap: 0; color: rgba(50, 48, 36, .72); font-family: "Noto Serif SC", serif; font-size: clamp(11px, 1.05vw, 15px); line-height: 1.16; letter-spacing: -.07em; text-align: justify; opacity: .84; filter: blur(.15px); }.glyph-block span { white-space: nowrap; }
+.glyph-block { position: absolute; left: 14%; top: 28%; width: 72%; height: 60%; overflow: hidden; display: flex; flex-direction: column; gap: 0; color: rgba(50, 48, 36, .72); font-family: "Noto Serif", var(--serif); font-size: clamp(11px, 1.05vw, 15px); line-height: 1.16; letter-spacing: -.07em; text-align: justify; opacity: .84; filter: blur(.15px); }.glyph-block span { white-space: nowrap; }
 .roof-shadow { position: absolute; z-index: 0; left: 16%; right: 16%; top: 17%; height: 56%; background: rgba(51, 42, 28, .32); filter: blur(12px); transform: translateY(28px) scaleY(.72); opacity: .6; }
 .roof-image { position: absolute; z-index: 2; left: 4%; top: 0; width: 92%; height: auto; filter: sepia(.19) saturate(.9) contrast(1.02) drop-shadow(0 16px 10px rgba(48, 35, 17, .22)); animation: roof-drift 7s ease-in-out infinite; }
 .hero-art__caption { position: absolute; z-index: 3; right: 5%; bottom: 3%; font-size: 9px; color: var(--ink-soft); writing-mode: vertical-rl; letter-spacing: .14em; }

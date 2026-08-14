@@ -64,3 +64,11 @@ Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Mala
 - [ ] Tạo 5 collage mới cùng chất liệu giấy cổ, palette đất và xử lý minh họa với bộ asset hiện tại.
 - [ ] Thay URL asset trong `destinations.ts` để hero/card dùng đúng ảnh mới.
 - [ ] Kiểm tra state, responsive, build và lưu checkpoint.
+
+## Vietnamese text and VNDO identity refresh
+
+- [x] Quét toàn bộ source, metadata, aria-label và UI để tìm chữ Hán/tiếng Trung còn sót.
+- [x] Viết lại các đoạn copy còn cần tinh chỉnh theo tiếng Việt editorial tự nhiên, nhất quán.
+- [x] Chọn và áp dụng tên site mới có chữ VNDO, bao gồm brand, title, description và microcopy.
+- [x] Tạo/cập nhật icon nhận diện VNDO và favicon theo phong cách dấu triện/atlas giấy cổ.
+- [x] Kiểm tra state 13 điểm đến, responsive, build và lưu checkpoint mới.
