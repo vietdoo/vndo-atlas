@@ -75,7 +75,7 @@ Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Mala
 
 ## GitHub repository export
 
-- [ ] Kiểm tra trạng thái Git hiện tại và các file cần loại khỏi commit.
-- [ ] Tạo repository GitHub private mới tên `vndo-atlas`.
-- [ ] Commit toàn bộ source hiện tại và push branch chính lên remote mới.
-- [ ] Xác minh remote URL, branch và commit đầu tiên trên GitHub.
+- [x] Kiểm tra trạng thái Git hiện tại và các file cần loại khỏi commit.
+- [x] Tạo repository GitHub private mới tên `vndo-atlas`.
+- [x] Commit toàn bộ source hiện tại và push branch chính lên remote mới.
+- [x] Xác minh remote URL, branch và commit đầu tiên trên GitHub.
