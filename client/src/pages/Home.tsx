@@ -82,7 +82,7 @@ export default function Home() {
   };
 
   return (
-    <main className="site-shell">
+    <main className="site-shell" lang="vi">
       <section className="stage" id="home" data-country={active.name.toLowerCase()}>
         <div className="perimeter" aria-hidden="true" />
         <header className="topbar">

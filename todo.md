@@ -12,3 +12,16 @@
 - [x] Hiển thị ảnh riêng cho Việt Nam và Nhật Bản trong danh sách điểm đến.
 - [x] Kiểm tra chuyển đổi hero và responsive sau khi thay đổi thứ tự.
 - [x] Lưu checkpoint bản cập nhật.
+
+## Rollback request
+
+- [x] Khôi phục dự án về checkpoint `c0f16da3`.
+- [x] Kiểm tra preview và trạng thái dev server sau rollback.
+- [x] Bàn giao kết quả rollback cho người dùng.
+
+## Vietnamese typography fix
+
+- [x] Rà soát letter-spacing, word-break, font và markup của các khối tiếng Việt.
+- [x] Sửa tiêu đề “Ba miền đất, một atlas thong thả” và nhãn điểm đến không bị tách chữ.
+- [x] Kiểm tra hero, cards và responsive mobile sau khi sửa typography.
+- [ ] Lưu checkpoint bản sửa lỗi.
