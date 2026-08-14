@@ -77,8 +77,11 @@ export default function Home() {
   }, []);
 
   const setDestination = (index: number) => {
-    if (index === activeIndex) return;
-    setActiveIndex(index);
+    setActiveIndex((currentIndex) => (index === currentIndex ? currentIndex : index));
+  };
+
+  const moveDestination = (direction: -1 | 1) => {
+    setActiveIndex((currentIndex) => (currentIndex + direction + destinations.length) % destinations.length);
   };
 
   return (
@@ -107,22 +110,22 @@ export default function Home() {
         <div className="marker marker--top marker--four">4</div>
         <div className="marker marker--top marker--five">5</div>
 
-        <button className="country-btn country-btn--left" type="button" onClick={() => setDestination((activeIndex + 1) % destinations.length)} aria-label={`Điểm đến tiếp theo: ${adjacent.next.name}`}>
+        <button className="country-btn country-btn--left" type="button" onClick={() => moveDestination(1)} aria-label={`Điểm đến tiếp theo: ${adjacent.next.name}`}>
           <span className="country-btn__marker">{adjacent.next.marker}</span>
           <span className="country-btn__label">{adjacent.next.name}</span>
           <ChevronLeft size={13} />
         </button>
-        <button className="country-btn country-btn--right" type="button" onClick={() => setDestination((activeIndex + destinations.length - 1) % destinations.length)} aria-label={`Điểm đến trước: ${adjacent.previous.name}`}>
+        <button className="country-btn country-btn--right" type="button" onClick={() => moveDestination(-1)} aria-label={`Điểm đến trước: ${adjacent.previous.name}`}>
           <span className="country-btn__marker">{adjacent.previous.marker}</span>
           <span className="country-btn__label">{adjacent.previous.name}</span>
           <ChevronRight size={13} />
         </button>
 
-        <div className="hero-art" aria-live="polite">
+        <div className="hero-art" key={active.name} aria-live="polite">
           <div className="glyph-block" aria-hidden="true">{Array.from({ length: 7 }, (_, row) => <span key={row}>{glyphs.slice(row * 9, row * 9 + 26)}</span>)}</div>
           <div className="roof-shadow" aria-hidden="true" />
           <img className="roof-image" src={active.image} alt={`Mái kiến trúc ${active.name}`} />
-          <div className="hero-art__caption">{active.country} / 01</div>
+          <div className="hero-art__caption">{active.country} / {String(activeIndex + 1).padStart(2, "0")}</div>
         </div>
 
         <div className="hero-copy">

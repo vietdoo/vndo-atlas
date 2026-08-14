@@ -24,4 +24,11 @@
 - [x] Rà soát letter-spacing, word-break, font và markup của các khối tiếng Việt.
 - [x] Sửa tiêu đề “Ba miền đất, một atlas thong thả” và nhãn điểm đến không bị tách chữ.
 - [x] Kiểm tra hero, cards và responsive mobile sau khi sửa typography.
-- [ ] Lưu checkpoint bản sửa lỗi.
+- [x] Lưu checkpoint bản sửa lỗi.
+
+## Country state synchronization
+
+- [x] Đọc lại mapping dữ liệu và state chuyển country trong `Home.tsx`.
+- [x] Đảm bảo hero, title, mô tả, ảnh, aside, caption, index và nút điều hướng dùng cùng một active country.
+- [x] Kiểm thử chuyển Việt Nam → Trung Quốc → Nhật Bản → Việt Nam và các nút trước/sau.
+- [x] Chạy check/build và lưu checkpoint bản sửa lỗi.
