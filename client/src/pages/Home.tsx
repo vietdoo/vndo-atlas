@@ -5,50 +5,7 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
-
-type Destination = {
-  name: string;
-  country: string;
-  phonetic: string;
-  title: string;
-  description: string;
-  aside: string;
-  image: string;
-  marker: string;
-};
-
-const destinations: Destination[] = [
-  {
-    name: "Việt Nam",
-    country: "Việt Nam",
-    phonetic: "Duyên  (duyên)",
-    title: "Việt Nam — ngõ đèn lồng, sớm mai bên sông và những mái nhà mềm đi trong mưa",
-    description: "Lần theo làn khói hương qua khu phố cũ, nơi mỗi bậc cửa đều giữ lại một chút thời tiết bên trong.",
-    aside: "Một sợi duyên tìm đến",
-    image: "/manus-storage/chimes-vietnam-editorial_a623ea27.png",
-    marker: "越",
-  },
-  {
-    name: "Trung Quốc",
-    country: "Trung Quốc",
-    phonetic: "缘分  (Duyên phận)",
-    title: "Trung Quốc — sân vàng, huyền thoại con đường tơ lụa, mái ngói thách thức trọng lực",
-    description: "Lang thang qua những khu vườn cấm, hiên mái sơn màu và những câu chuyện lâu đời hơn cả tấm bản đồ từng cố giữ chúng.",
-    aside: "Một cuộc gặp đã định",
-    image: "/manus-storage/chimes-hero-china_a199739c.png",
-    marker: "中",
-  },
-  {
-    name: "Nhật Bản",
-    country: "Nhật Bản",
-    phonetic: "縁  (En — duyên kết nối)",
-    title: "Nhật Bản — ngưỡng cửa tĩnh lặng, bóng tuyết tùng và tiếng chuông nhớ gió",
-    description: "Đi vòng thật xa dưới những hiên đền, nơi im lặng gom nhặt từng chi tiết và mùa để lại dấu vết.",
-    aside: "Một mối gặp ngang qua",
-    image: "/manus-storage/chimes-japan-editorial-v2_73e835ad.png",
-    marker: "日",
-  },
-];
+import { destinations } from "../data/destinations";
 
 const glyphs = "山水風月雲門庭寺路春秋東西南北光影人間遠行遊記";
 
@@ -141,18 +98,18 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="stage-footer"><span>Cuộn để du ngoạn</span><span className="footer-line" /><span>{String(activeIndex + 1).padStart(2, "0")} / 03</span></div>
+        <div className="stage-footer"><span>Cuộn để du ngoạn</span><span className="footer-line" /><span>{String(activeIndex + 1).padStart(2, "0")} / {String(destinations.length).padStart(2, "0")}</span></div>
       </section>
 
       <section className="editorial-section destinations-section" id="destinations">
         <div className="section-kicker">02 / điểm đến</div>
         <div>
           <p className="section-eyebrow">Chọn một câu chuyện kế bên.</p>
-          <h2>Ba miền đất,<br /><em>một atlas thong thả.</em></h2>
+          <h2>Mười ba miền đất,<br /><em>một atlas thong thả.</em></h2>
         </div>
         <div className="destination-list">
-          {destinations.map((destination, index) => (
-            <button key={destination.name} type="button" className={`destination-card ${index === activeIndex ? "is-selected" : ""}`} onClick={() => { setDestination(index); window.location.hash = "home"; window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+            {destinations.map((destination, index) => (
+            <button key={destination.name} type="button" aria-current={index === activeIndex ? "true" : undefined} className={`destination-card ${index === activeIndex ? "is-selected" : ""}`} onClick={() => { setDestination(index); window.location.hash = "home"; window.scrollTo({ top: 0, behavior: "smooth" }); }}>
               <span className="destination-card__index">0{index + 1}</span>
               <img className="destination-card__visual" src={destination.image} alt={`Ảnh điểm đến ${destination.name}`} />
               <span className="destination-card__name">{destination.name}</span>

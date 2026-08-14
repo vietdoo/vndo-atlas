@@ -46,3 +46,14 @@
 - [x] Thay asset ở data country để hero và destination card dùng cùng một ảnh mới.
 - [x] Kiểm tra state Nhật Bản trên desktop/mobile và build.
 - [x] Lưu checkpoint bản cập nhật hình ảnh.
+
+## Ten-country expansion
+
+Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Malaysia, Singapore, Ấn Độ, Sri Lanka và Nepal.
+
+- [x] Nghiên cứu motif kiến trúc/văn hóa và kiểm tra nguồn tham chiếu cho 10 quốc gia.
+- [x] Viết copy tiếng Việt và data contract thống nhất cho 13 quốc gia.
+- [x] Tạo 10 asset collage editorial mới theo cùng visual system.
+- [x] Refactor state/navigation để hỗ trợ 13 country state không lệch nội dung.
+- [x] Kiểm thử chuyển vòng, card trực tiếp, desktop/mobile và production build.
+- [x] Lưu checkpoint bản mở rộng 10 quốc gia.

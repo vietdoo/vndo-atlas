@@ -53,7 +53,7 @@ a { text-decoration: none; }
 .hero-art { position: absolute; left: 50%; top: 17%; width: min(55vw, 660px); height: 58%; transform: translateX(-50%); }
 .glyph-block { position: absolute; left: 14%; top: 28%; width: 72%; height: 60%; overflow: hidden; display: flex; flex-direction: column; gap: 0; color: rgba(50, 48, 36, .72); font-family: "Noto Serif SC", serif; font-size: clamp(11px, 1.05vw, 15px); line-height: 1.16; letter-spacing: -.07em; text-align: justify; opacity: .84; filter: blur(.15px); }.glyph-block span { white-space: nowrap; }
 .roof-shadow { position: absolute; z-index: 0; left: 16%; right: 16%; top: 17%; height: 56%; background: rgba(51, 42, 28, .32); filter: blur(12px); transform: translateY(28px) scaleY(.72); opacity: .6; }
-.roof-image { position: absolute; z-index: 2; left: 4%; top: 0; width: 92%; height: auto; filter: sepia(.15) contrast(1.04) drop-shadow(0 16px 10px rgba(48, 35, 17, .22)); animation: roof-drift 7s ease-in-out infinite; }
+.roof-image { position: absolute; z-index: 2; left: 4%; top: 0; width: 92%; height: auto; filter: sepia(.19) saturate(.9) contrast(1.02) drop-shadow(0 16px 10px rgba(48, 35, 17, .22)); animation: roof-drift 7s ease-in-out infinite; }
 .hero-art__caption { position: absolute; z-index: 3; right: 5%; bottom: 3%; font-size: 9px; color: var(--ink-soft); writing-mode: vertical-rl; letter-spacing: .14em; }
 @keyframes roof-drift { 0%, 100% { transform: translateY(0) rotate(-.25deg); } 50% { transform: translateY(-8px) rotate(.25deg); } }
 
@@ -95,3 +95,4 @@ body { text-rendering: optimizeLegibility; }
 .contribution-section h2,
 .about-modal h2 { letter-spacing: -.06em; }
 .destination-card__name { letter-spacing: normal; }
+.destination-card__name { min-width: 0; overflow-wrap: normal; word-break: keep-all; white-space: normal; line-height: .92; }
