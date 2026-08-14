@@ -45,7 +45,7 @@ const destinations: Destination[] = [
     title: "Nhật Bản — ngưỡng cửa tĩnh lặng, bóng tuyết tùng và tiếng chuông nhớ gió",
     description: "Đi vòng thật xa dưới những hiên đền, nơi im lặng gom nhặt từng chi tiết và mùa để lại dấu vết.",
     aside: "Một mối gặp ngang qua",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85",
+    image: "/manus-storage/chimes-japan-editorial-v2_73e835ad.png",
     marker: "日",
   },
 ];

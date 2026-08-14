@@ -39,3 +39,10 @@
 - [x] Khôi phục font chính và giữ fallback hỗ trợ tiếng Việt.
 - [x] Kiểm tra hero, destination cards và responsive mobile.
 - [x] Chạy build và lưu checkpoint mới.
+
+## Japan visual refresh
+
+- [x] Tạo asset Nhật Bản mới cùng chất liệu giấy cổ/editorial với Việt Nam và Trung Quốc.
+- [x] Thay asset ở data country để hero và destination card dùng cùng một ảnh mới.
+- [x] Kiểm tra state Nhật Bản trên desktop/mobile và build.
+- [x] Lưu checkpoint bản cập nhật hình ảnh.
