@@ -93,3 +93,10 @@ Phạm vi đề xuất: Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Mala
 - [x] Copy/tối ưu ảnh collage và favicon vào thư mục public của repository.
 - [x] Cập nhật data, metadata và README để dùng asset local trên Vercel.
 - [x] Kiểm tra build, kích thước asset, serving local và push thay đổi lên GitHub.
+
+## Professional English README refresh
+
+- [x] Rewrite the README fully in professional English with clear project positioning.
+- [x] Document setup, scripts, architecture, local assets, environment variables and Vercel deployment.
+- [x] Validate Markdown structure, commands and repository links.
+- [x] Commit and push the documentation update to GitHub.

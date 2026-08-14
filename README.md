@@ -1,48 +1,75 @@
 # VNDO Atlas
 
-**VNDO Atlas — Những ghi chú đường xa** là một trang travel editorial tương tác, được xây dựng như một collage bằng giấy parchment: kiến trúc, typography Cormorant Garamond, những ghi chú bên lề và 13 điểm đến được nối với nhau bởi một data contract duy nhất.
+> **A quiet editorial atlas for places, architecture and the details that remain after a journey.**
 
-Repository: [github.com/vietdoo/vndo-atlas](https://github.com/vietdoo/vndo-atlas)
+VNDO Atlas is an interactive travel editorial experience built around a parchment-paper collage system. It combines asymmetric composition, Cormorant Garamond typography, marginal notes and destination-led storytelling across 13 countries in Asia.
 
-## Tổng quan
+The project is intentionally small and focused: one expressive landing page, one central destination data contract and one synchronized interaction model. When a visitor changes destination, the hero image, title, description, caption, marker and navigation context all change from the same active record.
 
-VNDO Atlas là frontend React tĩnh, tập trung vào trải nghiệm đọc và chuyển cảnh giữa các điểm đến. Việt Nam được chọn làm điểm đến mặc định; hero image, tiêu đề, mô tả, caption, marker và điều hướng đều được lấy từ cùng một trạng thái quốc gia để tránh lệch nội dung.
+**Repository:** [github.com/vietdoo/vndo-atlas](https://github.com/vietdoo/vndo-atlas)
 
-Các điểm đến hiện có gồm Việt Nam, Trung Quốc, Nhật Bản, Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Malaysia, Singapore, Ấn Độ, Sri Lanka và Nepal.
+## Highlights
 
-> **Trạng thái:** dự án đã sẵn sàng để phát triển tiếp trên local hoặc deploy qua nền tảng hỗ trợ Vite. Toàn bộ ảnh collage và favicon hiện đã nằm trong repository tại `client/public/assets`, vì vậy Vercel không cần route Manus Storage để phục vụ asset.
-
-## Công nghệ
-
-| Thành phần | Sử dụng |
+| Area | What is included |
 | --- | --- |
-| UI | React 19 + TypeScript |
-| Build | Vite 7 |
-| Styling | Tailwind CSS 4 và CSS editorial tùy biến |
-| Routing | Wouter, với một route chính `/` |
-| Typography | Cormorant Garamond, Noto Serif, JetBrains Mono |
-| Icons | lucide-react và SVG mark VNDO |
-| Package manager | pnpm 10 |
-| Hosting hiện tại | Manus WebDev static hosting |
+| Editorial interface | Parchment palette, asymmetrical layout, collage imagery and paper-like motion |
+| Destination experience | 13 destinations with synchronized hero and card states |
+| Default destination | Việt Nam is the first and default destination |
+| Content language | Vietnamese UI copy with Vietnamese-capable typography fallback |
+| Brand system | VNDO Atlas wordmark, SVG mark and editorial visual tokens |
+| Asset strategy | Optimized WebP destination images and SVG favicon committed to the repository |
+| Deployment | Vite production build with ready-to-use Vercel configuration |
+| Accessibility | Semantic controls, keyboard destination navigation, dialog semantics and visible interaction states |
 
-## Yêu cầu môi trường
+## Destinations
 
-Để chạy dự án, cài đặt **Node.js 20 trở lên** và **pnpm 10**. Node.js 22 là lựa chọn được khuyến nghị cho môi trường phát triển hiện tại. Có thể kiểm tra phiên bản bằng:
+The current editorial set includes:
+
+**Việt Nam, Trung Quốc, Nhật Bản, Thái Lan, Hàn Quốc, Campuchia, Lào, Indonesia, Malaysia, Singapore, Ấn Độ, Sri Lanka and Nepal.**
+
+The visible interface remains Vietnamese by design. English documentation is provided for maintainers, contributors and deployment workflows.
+
+## Technology
+
+| Layer | Technology |
+| --- | --- |
+| UI | React 19 and TypeScript |
+| Build tool | Vite 7 |
+| Styling | Tailwind CSS 4 with a custom editorial CSS system |
+| Routing | Wouter with a single primary route |
+| Typography | Cormorant Garamond, Noto Serif and JetBrains Mono |
+| Iconography | lucide-react and the VNDO Atlas SVG mark |
+| Runtime | Node.js 20+ |
+| Package manager | pnpm 10.4.1 |
+| Hosting targets | Vercel, Manus WebDev static hosting or another Vite-compatible host |
+
+## Requirements
+
+Install the following before starting development:
+
+| Requirement | Recommended version |
+| --- | --- |
+| Node.js | 20 or newer; Node.js 22 is recommended |
+| pnpm | 10.4.1, defined by `package.json` |
+| Git | Any current release |
+
+Verify the installed versions:
 
 ```bash
 node --version
 pnpm --version
+git --version
 ```
 
-Nếu máy chưa có pnpm, cài đúng major version của repository:
+If pnpm is not installed, install the repository-compatible major version:
 
 ```bash
 npm install --global pnpm@10.4.1
 ```
 
-## Chạy local
+## Local development
 
-Clone repository và cài dependencies:
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/vietdoo/vndo-atlas.git
@@ -50,69 +77,84 @@ cd vndo-atlas
 pnpm install
 ```
 
-Khởi động Vite development server:
+Start the Vite development server:
 
 ```bash
 pnpm run dev
 ```
 
-Mở [http://localhost:3000](http://localhost:3000). Nếu cổng 3000 đang bận, Vite sẽ tự chọn cổng kế tiếp và in URL tương ứng trong terminal.
+Open [http://localhost:3000](http://localhost:3000). If port 3000 is already occupied, Vite will select the next available port and print the correct URL in the terminal.
 
-Development server có hỗ trợ HMR. Sau khi sửa `client/src/data/destinations.ts`, `client/src/pages/Home.tsx` hoặc `client/src/index.css`, trình duyệt sẽ tự cập nhật để tiện kiểm tra typography, state và responsive layout.
+The development server supports hot module replacement. The most frequently edited files are:
 
-## Các lệnh chính
+```text
+client/src/data/destinations.ts   Destination content and image paths
+client/src/pages/Home.tsx         Page structure and interaction state
+client/src/index.css              Design tokens and visual system
+client/index.html                 Metadata, fonts and favicon
+```
 
-| Lệnh | Mục đích |
+## Available scripts
+
+| Command | Purpose |
 | --- | --- |
-| `pnpm run dev` | Chạy development server tại cổng 3000 |
-| `pnpm run check` | Kiểm tra TypeScript mà không tạo output |
-| `pnpm run build` | Tạo production bundle tại `dist/public` và bundle server tại `dist/index.js` |
-| `pnpm run preview` | Preview Vite production output ở local |
-| `pnpm run start` | Chạy server Node production sau khi đã build |
-| `pnpm run format` | Format source bằng Prettier |
+| `pnpm run dev` | Start the Vite development server on port 3000 |
+| `pnpm run check` | Run TypeScript validation without emitting files |
+| `pnpm run build` | Build the Vite frontend and the local Node production bundle |
+| `pnpm run preview` | Serve the generated Vite output locally |
+| `pnpm run start` | Start the generated Node production server after `pnpm run build` |
+| `pnpm run format` | Format project files with Prettier |
 
-Quy trình kiểm tra đề xuất trước mỗi commit:
+Run the standard verification sequence before opening a pull request:
 
 ```bash
 pnpm run check
 pnpm run build
+git diff --check
 ```
 
-Để chạy bản build qua server Node:
+To inspect the Vite production output locally:
+
+```bash
+pnpm run build
+pnpm run preview
+```
+
+To run the bundled Node server instead:
 
 ```bash
 pnpm run build
 pnpm run start
 ```
 
-Sau đó mở [http://localhost:3000](http://localhost:3000). Server production phục vụ nội dung từ `dist/public` và có fallback về `index.html` cho client-side routing.
+The Node server serves `dist/public` and provides the local production runtime. Vercel uses the Vite output directory configured in `vercel.json`.
 
-## Cấu trúc dự án
+## Project structure
 
 ```text
 vndo-atlas/
 ├── client/
-│   ├── index.html              # metadata, font và favicon
+│   ├── index.html                  # Document metadata, fonts and favicon
 │   ├── public/
-│   │   └── assets/             # ảnh WebP và mark SVG được commit cùng repository
+│   │   └── assets/                 # Repository-local WebP images and SVG mark
 │   └── src/
-│       ├── data/destinations.ts # data contract 13 điểm đến
-│       ├── pages/Home.tsx      # trang editorial chính
-│       ├── components/         # component dùng chung và shadcn/ui
-│       ├── hooks/              # React hooks hỗ trợ
-│       ├── App.tsx             # theme provider và routing
-│       └── index.css           # design tokens và toàn bộ visual system
-├── server/index.ts             # server Node phục vụ production local
-├── shared/                     # placeholder types tương thích template
-├── vercel.json                 # build/output settings cho Vercel
-├── package.json                # scripts và dependencies
-├── pnpm-lock.yaml              # lockfile bắt buộc khi cài đặt reproducible
+│       ├── data/destinations.ts    # Typed content contract for 13 destinations
+│       ├── pages/Home.tsx           # Editorial page and synchronized state
+│       ├── components/             # Shared components and shadcn/ui primitives
+│       ├── hooks/                  # Reusable React hooks
+│       ├── App.tsx                 # Theme provider and route entry
+│       └── index.css               # Design tokens and visual system
+├── server/index.ts                 # Local Node production server
+├── shared/                         # Compatibility types from the template
+├── vercel.json                     # Vercel framework, build and output settings
+├── package.json                    # Scripts, dependencies and package metadata
+├── pnpm-lock.yaml                  # Reproducible dependency lockfile
 └── README.md
 ```
 
-## Cập nhật nội dung điểm đến
+## Content and destination data
 
-Tất cả điểm đến nằm trong `client/src/data/destinations.ts`. Mỗi object phải giữ đủ các trường sau:
+All destination content is centralized in `client/src/data/destinations.ts`. Each record follows the same contract:
 
 ```ts
 type Destination = {
@@ -127,97 +169,150 @@ type Destination = {
 };
 ```
 
-Không nên tạo một state riêng cho title, ảnh hoặc caption. `Home.tsx` chỉ nên đọc các trường từ `active` và `adjacent` để mọi phần của hero chuyển cùng một quốc gia.
+Keep the destination contract as the single source of truth. Do not create separate React state values for the title, image, caption or description. `Home.tsx` derives the active and adjacent destinations from one `activeIndex`, which prevents mixed-country content during navigation.
 
-Khi bổ sung ảnh mới, ưu tiên asset collage đã được xử lý cùng palette parchment, ink brown, jade và cinnabar. Bản hiện tại chủ động giữ bộ ảnh đã tối ưu trong `client/public/assets` để repository có thể clone và deploy độc lập trên Vercel. Nếu bộ asset tăng đáng kể, hãy chuyển sang storage/CDN ổn định và cập nhật URL trong data contract.
+When adding a destination, update the data contract first, then verify the following states on desktop and mobile:
 
-## Biến môi trường
+1. The hero image and architectural alt text.
+2. The title, phonetic label, aside and description.
+3. The previous and next destination controls.
+4. The hero caption and destination index.
+5. The destination list card and selected state.
 
-Bản frontend không cần API key để chạy các chức năng điều hướng và hiển thị nội dung. Một số biến dưới đây là tùy chọn hoặc dành cho runtime Manus:
+## Repository-local assets
 
-| Biến | Bắt buộc | Ghi chú |
+All runtime images are stored directly in `client/public/assets` so the project can be cloned and deployed without a Manus Storage route or external image hotlink.
+
+| Asset type | Location | Runtime path |
 | --- | --- | --- |
-| `VITE_ANALYTICS_ENDPOINT` | Không | Endpoint analytics nếu muốn giữ script Umami trong `client/index.html` |
-| `VITE_ANALYTICS_WEBSITE_ID` | Không | Website ID tương ứng với analytics endpoint |
-| `BUILT_IN_FORGE_API_URL` | Không trên Vercel | Dùng cho proxy Manus Storage trong development/runtime Manus |
-| `BUILT_IN_FORGE_API_KEY` | Không trên Vercel | Secret nội bộ cho proxy Manus Storage; không commit vào Git |
+| Destination collages | `client/public/assets/*.webp` | `/assets/<filename>.webp` |
+| VNDO Atlas mark | `client/public/assets/vndo-atlas-mark.svg` | `/assets/vndo-atlas-mark.svg` |
 
-Không đưa secret thật vào repository. Với Vercel, khai báo biến môi trường trong **Project Settings → Environment Variables** và chỉ bật cho các environment cần thiết.
+The current asset set is optimized for this editorial experience and is approximately 4.8 MB in the source repository. Vite copies it into `dist/public/assets` during production builds. If the collection grows substantially, consider moving large media to a dedicated CDN, object storage provider or image service while keeping the data contract unchanged.
 
-## Deploy lên Vercel bằng GitHub
+The Vite configuration explicitly sets `publicDir` to `client/public`, ensuring that repository-local assets are served consistently in both development and production preview.
 
-Repository đã có `vercel.json` để Vercel dùng đúng build command và output directory. Quy trình đề xuất là:
+## Environment variables
 
-1. Truy cập [Vercel New Project](https://vercel.com/new) và import repository `vietdoo/vndo-atlas`.
-2. Chọn framework preset **Vite**.
-3. Giữ root directory là thư mục gốc của repository.
-4. Kiểm tra các giá trị sau:
+The core interface does not require an API key. Destination navigation, content rendering and repository-local assets work without additional configuration.
 
-   ```text
-   Install Command: pnpm install --frozen-lockfile
-   Build Command:   pnpm run build
-   Output Directory: dist/public
-   Node.js Version: 20 hoặc 22
-   ```
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `VITE_ANALYTICS_ENDPOINT` | Optional | Umami-compatible analytics endpoint used by the document script |
+| `VITE_ANALYTICS_WEBSITE_ID` | Optional | Analytics website identifier |
+| `BUILT_IN_FORGE_API_URL` | Not required on Vercel | Manus runtime integration variable; not needed for repository-local assets |
+| `BUILT_IN_FORGE_API_KEY` | Not required on Vercel | Manus runtime secret; never commit a real value |
 
-5. Nếu cần analytics, thêm `VITE_ANALYTICS_ENDPOINT` và `VITE_ANALYTICS_WEBSITE_ID` trong Environment Variables.
-6. Nhấn **Deploy**. Các commit mới trên branch `main` sẽ tạo deployment mới nếu bật automatic deployments.
+For Vercel, configure optional variables under **Project Settings → Environment Variables**. Do not add secrets to `.env` files that are committed to Git. If analytics is not required, remove or conditionally disable the analytics script in `client/index.html` rather than deploying unresolved placeholder values.
 
-## Deploy lên Vercel bằng CLI
+## Deploy to Vercel with GitHub
 
-Cài Vercel CLI và đăng nhập:
+The repository includes the following Vercel configuration:
+
+```json
+{
+  "framework": "vite",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist/public"
+}
+```
+
+Deploy through the Vercel dashboard:
+
+1. Open [Vercel New Project](https://vercel.com/new).
+2. Import `vietdoo/vndo-atlas` from GitHub.
+3. Keep the repository root as the project root.
+4. Select the Vite framework preset.
+5. Confirm the install command, build command and output directory match the configuration above.
+6. Add analytics environment variables only if analytics is enabled.
+7. Select **Deploy**.
+
+After Git integration is enabled, new commits pushed to `main` can trigger automatic deployments. Because all runtime images and the favicon are committed under `client/public/assets`, the Vercel deployment does not depend on `/manus-storage/...` routes.
+
+## Deploy to Vercel with the CLI
+
+Install and authenticate the Vercel CLI:
 
 ```bash
 npm install --global vercel
 vercel login
 ```
 
-Từ thư mục repository, chạy lần đầu ở chế độ preview:
+From the repository root, create a preview deployment:
 
 ```bash
 vercel
 ```
 
-Khi đã kiểm tra preview, deploy production:
+After reviewing the preview, deploy to production:
 
 ```bash
 vercel --prod
 ```
 
-Nếu CLI hỏi cấu hình, chọn project hiện tại hoặc tạo project mới, giữ build command `pnpm run build` và output directory `dist/public`.
-
-## Lưu ý khi deploy lên Vercel
-
-Vercel không cần route Manus Storage cho bản hiện tại: toàn bộ 13 ảnh điểm đến và favicon đã được tối ưu thành WebP/SVG và commit tại `client/public/assets`. Vite sẽ copy thư mục này nguyên trạng vào `dist/public/assets`, còn giao diện tham chiếu bằng đường dẫn `/assets/...`.
-
-Tổng kích thước bộ asset local khoảng 4,6 MB. Đây là lựa chọn phù hợp để repository có thể clone và deploy độc lập; nếu bộ ảnh tăng đáng kể trong tương lai, hãy cân nhắc Vercel Blob, Cloudinary, S3-compatible storage hoặc CDN ảnh để giảm kích thước clone và cải thiện cache. Các nguồn ảnh tham chiếu ban đầu được tải về và lưu thành bản local để deployment không phụ thuộc hotlink hoặc route bên ngoài.
-
-Nếu không cần analytics trên Vercel, hãy xóa hoặc vô hiệu hóa script Umami trong `client/index.html` thay vì để các placeholder environment variable chưa được thay thế.
+When prompted, select the existing Vercel project or create a new one. Keep the repository root, `pnpm run build` as the build command and `dist/public` as the output directory.
 
 ## Git workflow
 
-Tạo branch cho thay đổi và kiểm tra trước khi push:
+Create a focused branch for each change:
 
 ```bash
-git checkout -b feature/ten-thay-doi
-pnpm run check
-pnpm run build
-git add .
-git commit -m "Describe the change"
-git push -u origin feature/ten-thay-doi
+git checkout -b feature/describe-the-change
 ```
 
-Sau khi merge vào `main`, Vercel sẽ tạo deployment mới nếu project đã bật Git integration.
+Validate, review and commit the change:
 
-## Thiết kế và accessibility
+```bash
+pnpm run check
+pnpm run build
+git diff --check
+git add .
+git commit -m "Describe the change"
+git push -u origin feature/describe-the-change
+```
 
-Visual system của dự án dùng nền parchment, typography serif editorial, bố cục bất đối xứng và chuyển động nhẹ như giấy collage. Khi chỉnh sửa, giữ tương phản màu, focus state bàn phím, `aria-label` cho nút điều hướng và `prefers-reduced-motion` cho các animation không thiết yếu.
+Open a pull request against `main` and include a short description of the visual or content change. For destination updates, include desktop and mobile verification notes.
 
-Nội dung hiển thị được viết bằng tiếng Việt; không đưa lại glyph CJK vào marker hoặc decorative text nếu không có chủ đích biên tập rõ ràng. Khi thêm quốc gia mới, cần kiểm tra đồng bộ hero, title, description, image, caption, marker và card ở cả desktop lẫn mobile.
+## Design principles
 
-## Tài liệu tham khảo
+The interface follows a contemporary editorial collage direction:
 
-1. [Vite — Deploying a Static Site](https://vite.dev/guide/static-deploy.html)
-2. [Vercel — Vite deployment guide](https://vercel.com/docs/frameworks/frontend/vite)
-3. [pnpm — Installation](https://pnpm.io/installation)
-4. [Node.js — Download](https://nodejs.org/en/download)
+* **Material:** warm parchment, ink brown, jade and cinnabar accents.
+* **Composition:** asymmetric placement, margin notes and deliberate negative space rather than a conventional centered grid.
+* **Typography:** Cormorant Garamond carries the travel writing; Noto Serif preserves Vietnamese readability; JetBrains Mono handles utility labels and coordinates.
+* **Motion:** interactions should feel like paper ephemera moving across a page, with restrained transitions and reduced-motion support.
+* **Voice:** copy should be observant, specific and unhurried. Avoid generic tourism language and maintain the tone of a field note.
+
+When editing the interface, ask whether a change reinforces or dilutes this design philosophy.
+
+## Accessibility and quality expectations
+
+Preserve semantic buttons and links, visible focus states, descriptive image alt text, keyboard navigation and dialog semantics. Keep `lang="vi"` on the document and retain the Vietnamese-capable font fallback.
+
+Before merging a UI change, verify:
+
+```text
+[ ] TypeScript check passes
+[ ] Production build passes
+[ ] No external runtime image paths were introduced accidentally
+[ ] Destination state remains synchronized
+[ ] Desktop and mobile layouts remain readable
+[ ] Keyboard and reduced-motion behavior remain usable
+```
+
+## License
+
+The project is published under the MIT License as declared in `package.json`. Review the license and provenance of any new third-party image, font or media asset before adding it to the repository.
+
+## References
+
+1. [Vite — Static deployment guide][1]
+2. [Vercel — Vite deployment documentation][2]
+3. [pnpm — Installation guide][3]
+4. [Node.js — Downloads][4]
+
+[1]: https://vite.dev/guide/static-deploy.html "Vite static deployment guide"
+[2]: https://vercel.com/docs/frameworks/frontend/vite "Vercel Vite deployment documentation"
+[3]: https://pnpm.io/installation "pnpm installation guide"
+[4]: https://nodejs.org/en/download "Node.js downloads"
