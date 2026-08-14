@@ -19,6 +19,16 @@ type Destination = {
 
 const destinations: Destination[] = [
   {
+    name: "Việt Nam",
+    country: "Việt Nam",
+    phonetic: "Duyên  (duyên)",
+    title: "Việt Nam — ngõ đèn lồng, sớm mai bên sông và những mái nhà mềm đi trong mưa",
+    description: "Lần theo làn khói hương qua khu phố cũ, nơi mỗi bậc cửa đều giữ lại một chút thời tiết bên trong.",
+    aside: "Một sợi duyên tìm đến",
+    image: "/manus-storage/chimes-vietnam-editorial_a623ea27.png",
+    marker: "越",
+  },
+  {
     name: "Trung Quốc",
     country: "Trung Quốc",
     phonetic: "缘分  (Duyên phận)",
@@ -29,23 +39,13 @@ const destinations: Destination[] = [
     marker: "中",
   },
   {
-    name: "Việt Nam",
-    country: "Việt Nam",
-    phonetic: "Duyên  (duyên)",
-    title: "Việt Nam — ngõ đèn lồng, sớm mai bên sông và những mái nhà mềm đi trong mưa",
-    description: "Lần theo làn khói hương qua khu phố cũ, nơi mỗi bậc cửa đều giữ lại một chút thời tiết bên trong.",
-    aside: "Một sợi duyên tìm đến",
-    image: "/manus-storage/chimes-destination-vietnam_c521950d.png",
-    marker: "越",
-  },
-  {
     name: "Nhật Bản",
     country: "Nhật Bản",
     phonetic: "縁  (En — duyên kết nối)",
     title: "Nhật Bản — ngưỡng cửa tĩnh lặng, bóng tuyết tùng và tiếng chuông nhớ gió",
     description: "Đi vòng thật xa dưới những hiên đền, nơi im lặng gom nhặt từng chi tiết và mùa để lại dấu vết.",
     aside: "Một mối gặp ngang qua",
-    image: "/manus-storage/chimes-destination-japan_1a69dec1.png",
+    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85",
     marker: "日",
   },
 ];
@@ -151,6 +151,7 @@ export default function Home() {
           {destinations.map((destination, index) => (
             <button key={destination.name} type="button" className={`destination-card ${index === activeIndex ? "is-selected" : ""}`} onClick={() => { setDestination(index); window.location.hash = "home"; window.scrollTo({ top: 0, behavior: "smooth" }); }}>
               <span className="destination-card__index">0{index + 1}</span>
+              <img className="destination-card__visual" src={destination.image} alt={`Ảnh điểm đến ${destination.name}`} />
               <span className="destination-card__name">{destination.name}</span>
               <span className="destination-card__aside">{destination.aside}</span>
               <span className="destination-card__arrow">↗</span>
